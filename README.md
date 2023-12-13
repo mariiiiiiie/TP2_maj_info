@@ -21,4 +21,11 @@ We create a programm to display the file and the host, two parameters in argumen
 
 ### To obtain the server’s address.
 
-We make a code that goes trought the linked list 'result'. We can't check the code because we can find a good way to display the address.
+We make a code that goes trought the linked list 'result'. We can check the server's address by display this address. We get :
+
+<div align="center">
+<br>
+<img src="Images/ex2.jpeg" width="400"> </br>
+</br> 
+</div>
+
