@@ -40,3 +40,9 @@ We complete our own code to reserve a connection socket to server. To check our 
 </br> 
 </div>
 
+### For gettftp
+
+##### RRQ
+
+We want to build a properly formed Read Request and send it to the server. For this program we create an array by allocating memory. For the RRQ we want 2 bytes for operation code , the file, one zero and the 'mode' and finally one zero. 
+
