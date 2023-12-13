@@ -18,3 +18,7 @@ We create a programm to display the file and the host, two parameters in argumen
 <img src="Images/exercice1.jpeg" width="700"> </br>
 </br> 
 </div>
+
+### To obtain the server’s address.
+
+We make a code that goes trought the linked list 'result'. We can't check the code because we can find a good way to display the address.
