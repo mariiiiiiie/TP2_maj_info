@@ -25,7 +25,18 @@ We make a code that goes trought the linked list 'result'. We can check the serv
 
 <div align="center">
 <br>
-<img src="Images/ex2.jpeg" width="400"> </br>
+<img src="Images/exercice3.jpeg" width="400"> </br>
+</br> 
+</div>
+
+
+### Connection socket to the server.
+
+We complete our own code to reserve a connection socket to server.
+
+<div align="center">
+<br>
+<img src="Images/Question 3.jpeg" width="400"> </br>
 </br> 
 </div>
 
