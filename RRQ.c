@@ -23,7 +23,7 @@ int main(int argc, char *argv[]){
 	}
 	
     struct addrinfo hints;
-    struct addrinfo *result,*rp;
+    struct addrinfo *result;
 
     memset(&hints, 0, sizeof(struct addrinfo));
     hints.ai_family = AF_INET;    // IPv4
@@ -32,15 +32,22 @@ int main(int argc, char *argv[]){
     hints.ai_protocol = IPPROTO_UDP; // config prtocol for an UDP
 
     
-    int s = getaddrinfo(argv[1],"69", &hints, &result);
+    int s = getaddrinfo(argv[1], "69", &hints, &result);
     
     if (s != 0) { //verification if getaddrinfo worked
         fprintf(stderr, "getaddrinfo: %s\n", gai_strerror(s)); //return of the error code
         exit(EXIT_FAILURE);
     }
-    // adress recuperation
-		void *addr;
-		struct sockaddr_in *ipv4 = (struct sockaddr_in *)rp->ai_addr;
-        addr = &(ipv4->sin_addr);
-        printf("L'adresse est : %p\n",addr);
+
+	// socket creation
+	int sfd = socket(result->ai_family,result->ai_socktype,result->ai_protocol);
+	
+	if (sfd==-1) {
+		fprintf(stderr, "Error : %s cannot connect to the secteur %s\n", argv[0], argv[1]);
+		exit(EXIT_FAILURE);
+	}
+	
+	//Read request to send to the server
+	
+	
 }
