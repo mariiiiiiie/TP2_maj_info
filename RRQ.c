@@ -7,6 +7,9 @@
 #include <sys/stat.h>
 #include <netdb.h>
 #include <arpa/inet.h> 
+#include <sys/socket.h>
+
+#define CMD_SIZE 1500
 
 int main(int argc, char *argv[]){
 	
@@ -48,6 +51,18 @@ int main(int argc, char *argv[]){
 	}
 	
 	//Read request to send to the server
+	//Creation of the request
+	char* cmd = malloc(CMD_SIZE);
+
+	cmd[0] = 0;
+	cmd[1] = 1;
+	// opcode for the read request
 	
-	
+	char *filename = argv[2];
+	strcpy(&cmd[2], filename);
+	strcpy(&cmd[2 + strlen(filename) + 1], "octet");
+	//consideration of zeros
+
+	int size = (int) (2 + strlen(filename) + 1 + strlen("octet") + 1);// on compte deux /0
+
 }
