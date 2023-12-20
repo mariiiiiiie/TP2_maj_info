@@ -96,6 +96,24 @@ int main(int argc, char *argv[]){
         printf("%c", espace[i]);
     }
 	
+	// opcode for the ACK request
+	
+	char* ackCmd = malloc(CMD_SIZE);
+	ackCmd[0] = 0;
+	ackCmd[1] = 4;
+	
+	char* Block = malloc(2);
+	Block[0] = espace[2];
+	Block[1] = espace[3];
+	
+	strcpy(&ackCmd[2], Block);
+	
+
+	//file demand to the server
+	
+	int sendacquittement;
+	sendacquittement = sendto(sfd, ackCmd, sizeof(ackCmd), result ->ai_flags, result->ai_addr, result->ai_addrlen);
+	printf("SendToASK = %d\n", sendacquittement);
 	return 0;
 	
 	
