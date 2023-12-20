@@ -92,6 +92,10 @@ int main(int argc, char *argv[]){
 		printf("error while recvfrom : %d\n",recvSize);
 	}
 	
+	for (int i = 4; i < recvSize; ++i) {
+        printf("%c", espace[i]);
+    }
+	
 	return 0;
 	
 	
