@@ -64,7 +64,7 @@ int main(int argc, char *argv[]){
 	strcpy(&cmd[2 + strlen(filename) + 1], "octet");
 	//consideration of zeros
 
-	int size = (int) (2 + strlen(filename) + 1 + strlen("octet") + 1);// on compte deux /0
+	int size = (int) (2 + strlen(filename) + 1 + strlen("octet") + 1);// we add two /0
 
 	//file demand to the server
 	

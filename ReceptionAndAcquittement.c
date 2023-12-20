@@ -56,15 +56,14 @@ int main(int argc, char *argv[]){
 
 	cmd[0] = 0;
 	cmd[1] = 1;
-	// opcode fo
-	r the read request
+	// opcode for the read request
 	
 	char *filename = argv[2];
 	strcpy(&cmd[2], filename);
 	strcpy(&cmd[2 + strlen(filename) + 1], "octet");
 	//consideration of zeros
 
-	int size = (int) (2 + strlen(filename) + 1 + strlen("octet") + 1);// on compte deux /0
+	int size = (int) (2 + strlen(filename) + 1 + strlen("octet") + 1);// we add /0
 
 	//file demand to the server
 	
@@ -77,4 +76,23 @@ int main(int argc, char *argv[]){
 	if(sendmessage == -1){
 		printf("error while sendto : %d\n", sendmessage);
 	}
+	
+	// file reception
+	
+	struct sockaddr sock_addr;
+	int recvSize;
+	char espace[CMD_SIZE];
+	
+	socklen_t addrsize = sizeof(sock_addr);
+	recvSize= recvfrom(sfd, espace, CMD_SIZE, 0,&sock_addr, &addrsize);
+	printf("recvffrom=%d\n",recvSize);
+	
+	//error test
+	if (recvSize==-1){
+		printf("error while recvfrom : %d\n",recvSize);
 	}
+	
+	return 0;
+	
+	
+}
