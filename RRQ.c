@@ -34,7 +34,7 @@ int main(int argc, char *argv[]){
     hints.ai_flags = 0;
     hints.ai_protocol = IPPROTO_UDP; // config prtocol for an UDP
 
-    
+    // status creation
     int s = getaddrinfo(argv[1], "69", &hints, &result);
     
     if (s != 0) { //verification if getaddrinfo worked
@@ -56,7 +56,8 @@ int main(int argc, char *argv[]){
 
 	cmd[0] = 0;
 	cmd[1] = 1;
-	// opcode for the read request
+	// opcode fo
+	r the read request
 	
 	char *filename = argv[2];
 	strcpy(&cmd[2], filename);
@@ -65,4 +66,15 @@ int main(int argc, char *argv[]){
 
 	int size = (int) (2 + strlen(filename) + 1 + strlen("octet") + 1);// on compte deux /0
 
-}
+	//file demand to the server
+	
+	int sendmessage;
+	sendmessage = sendto(sfd, cmd, size, result ->ai_flags, result->ai_addr, result->ai_addrlen);
+	printf("SendTo = %d\n", sendmessage);
+	
+	//error test
+	
+	if(sendmessage == -1){
+		printf("error while sendto : %d\n", sendmessage);
+	}
+	}
