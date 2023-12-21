@@ -62,4 +62,12 @@ We want to receive a data packet with a maximum of 512 data bits. To do this, we
 </br> 
 </div>
 
+##### ACK
 
+We want now to aknowlage the reception of the DATA. Sending a DATA packet is an acknowledgement of receipt of the first ACK packet of the previous DATA packet. And for that we will use an array based on the previous DAT.
+
+<div align="center">
+<br>
+<img src="Images/ACK packet.jpg" width="700"> </br>
+</br> 
+</div>
